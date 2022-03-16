@@ -16,3 +16,4 @@ for tgroup in tio.target_groups.list():
             tio.tags.create(group_type, name, description, filters=[("ipv4", "eq", str(member))])
     except:
         print("\nDuplicate Tag found. Skiping\n")
+        pass
