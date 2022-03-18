@@ -9,11 +9,11 @@ for tgroup in tio.target_groups.list():
     name = tgroup['name']
     group_type = tgroup['type']
 
-    description = 'Imported via a script'
+    description = 'Migrated from target groups via a script.'
 
     try:
         if name != 'Default':
             tio.tags.create(group_type, name, description, filters=[("ipv4", "eq", str(member))])
     except:
-        print("\nDuplicate Tag found. Skiping\n")
+        print("\nDuplicate Tag found. Skipping\n")
         pass
